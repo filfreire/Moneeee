@@ -1,6 +1,25 @@
 import './style';
 import { h, render, Component } from 'preact';
 
+class MainSection extends Component {
+    constructor() {
+        super();
+    }
+
+    render(props, state) {
+        let moneee = Moneee(
+            Seconds(state.starttime, state.time),
+            state.moneypersec
+        );
+        return <section>
+            <article>
+                <MoneeClock/>
+            </article>
+            <footer><nav><ul><li><small>Made with <a href="https://yegor256.github.io/tacit/">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></li></ul></nav></footer>
+        </section>;
+    }
+}
+
 class MoneeClock extends Component {
     constructor() {
         super();
@@ -27,16 +46,11 @@ class MoneeClock extends Component {
             Seconds(state.starttime, state.time),
             state.moneypersec
         );
-        return <section><article><section>
-                <div class="center">
-                    <h1>💸💸💸</h1>
-                    <h1>You've made: <div>{ moneee } €</div></h1>
-                    <h1>💸💸💸</h1>
-                </div>
-            </section>
-        </article>
-        <footer><nav><ul><li><small>Made with <a href="https://yegor256.github.io/tacit/">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></li></ul></nav></footer>
-        </section>;
+        return <div class="center">
+            <h1>💸💸💸</h1>
+            <h1>You've made: <div>{ moneee } €</div></h1>
+            <h1>💸💸💸</h1>
+        </div>;
     }
 }
 
@@ -48,5 +62,4 @@ function Moneee(seconds, moneypersec) {
     return Math.round(seconds * moneypersec * 100) / 100;
 }
 
-// render an instance of MoneeClock into <body>:
-render(<MoneeClock />, document.body);
+export default MainSection;
