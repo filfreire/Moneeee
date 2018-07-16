@@ -7,10 +7,6 @@ class MainSection extends Component {
     }
 
     render(props, state) {
-        let moneee = Moneee(
-            Seconds(state.starttime, state.time),
-            state.moneypersec
-        );
         return <section>
             <article>
                 <MoneeClock/>
