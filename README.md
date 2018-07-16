@@ -28,3 +28,4 @@ $ npm run start
 - [ ] styling with Tacit css
 - [ ] support translations
 - [ ] support different currencies (currently €)
+- [ ] add "share how much you made in a boring meeting"
