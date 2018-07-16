@@ -35,7 +35,7 @@ class MoneeClock extends Component {
                 </div>
             </section>
         </article>
-        <footer><nav><ul><li><small>Made with <a href="https://github.com/yegor256/tacit">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></li></ul></nav></footer>
+        <footer><nav><ul><li><small>Made with <a href="https://yegor256.github.io/tacit/">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></li></ul></nav></footer>
         </section>;
     }
 }
