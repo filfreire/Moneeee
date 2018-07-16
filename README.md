@@ -2,7 +2,7 @@
 
 💸 Simple app to know how much money you're making during a boring meeting or "agile" ceremony. 💸
 
-Built with 💖 and [PREACT](https://preactjs.com).
+Built with 💖, [Tacit](https://yegor256.github.io/tacit/) and [PREACT](https://preactjs.com).
 
 ## How to build
 
