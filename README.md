@@ -19,7 +19,7 @@ $ npm run start
 ## TODO
 
 - [ ] See if something missing on how to build section
-- [ ] configurable 💸money💸 value via input (defined per day, or per hour, or per second)
+- [x] configurable 💸money💸 value via input (defined per day, or per hour, or per second)
 - [ ] money raining animation
 - [ ] static analysis/linting, code quality
 - [ ] unit tests

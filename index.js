@@ -4,7 +4,8 @@ import { h, render, Component } from 'preact';
 class MoneeClock extends Component {
     constructor() {
         super();
-        this.state.moneypersec = 100; // TODO: change this to a variable via input
+        // TODO: improve this crappy code, and crappy input
+        this.state.moneypersec = ((prompt("I make per month (20 work days, 8h a day)", 1500))/20)/8/60/60;
         this.state.time = Date.now();
         this.state.starttime = Date.now();
     }
@@ -29,7 +30,7 @@ class MoneeClock extends Component {
         return <div class="center">
             <h1>💸💸💸</h1>
             <h1>You've made: <div>{ moneee } €</div></h1>
-            <iframe src="https://giphy.com/embed/3oFzmqENRBkRTRfLcA" width="240" height="135" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/3oFzmqENRBkRTRfLcA">via GIPHY</a></p>
+            <h1>💸💸💸</h1>
         </div>;
     }
 }
