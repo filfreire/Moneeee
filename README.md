@@ -1,6 +1,6 @@
 # Moneeee
 
-💸 Simple app to know how much money you're making during a boring meeting or "agile" ceremony. 💸
+💸 Simple app to know how much money you're making during a boring meeting or "agile" ceremony. [moneeee.tech](https://moneeee.tech/) 💸
 
 Built with 💖, [Tacit](https://yegor256.github.io/tacit/) and [PREACT](https://preactjs.com).
 
@@ -23,9 +23,10 @@ $ npm run start
 - [ ] money raining animation
 - [ ] static analysis/linting, code quality
 - [ ] unit tests
-- [ ] domain setup, deployement to production
+- [x] domain setup, deployement to production
 - [ ] Travis CI
 - [x] styling with Tacit css
 - [ ] support translations
 - [ ] support different currencies (currently €)
 - [ ] add "share how much you made in a boring meeting"
+- [ ] add donate button (to get me some software engineering, testing and programming books... and 🍕)
