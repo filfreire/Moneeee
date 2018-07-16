@@ -25,7 +25,7 @@ $ npm run start
 - [ ] unit tests
 - [ ] domain setup, deployement to production
 - [ ] Travis CI
-- [ ] styling with Tacit css
+- [x] styling with Tacit css
 - [ ] support translations
 - [ ] support different currencies (currently €)
 - [ ] add "share how much you made in a boring meeting"

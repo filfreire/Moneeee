@@ -27,11 +27,16 @@ class MoneeClock extends Component {
             Seconds(state.starttime, state.time),
             state.moneypersec
         );
-        return <div class="center">
-            <h1>💸💸💸</h1>
-            <h1>You've made: <div>{ moneee } €</div></h1>
-            <h1>💸💸💸</h1>
-        </div>;
+        return <section><article><section>
+                <div class="center">
+                    <h1>💸💸💸</h1>
+                    <h1>You've made: <div>{ moneee } €</div></h1>
+                    <h1>💸💸💸</h1>
+                </div>
+            </section>
+        </article>
+        <footer><nav><ul><li><small>Made with <a href="https://github.com/yegor256/tacit">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></li></ul></nav></footer>
+        </section>;
     }
 }
 
