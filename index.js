@@ -1,9 +1,13 @@
 import './style';
 import { h, render, Component } from 'preact';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-108436742-2'); //refactor how UA code is obtained
+
 class MainSection extends Component {
     constructor() {
         super();
+        ReactGA.pageview('moneeee-pageview');
     }
 
     render(props, state) {
