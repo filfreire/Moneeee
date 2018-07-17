@@ -30,4 +30,4 @@ $ npm run start
 - [ ] support different currencies (currently €)
 - [ ] add "share how much you made in a boring meeting"
 - [ ] add donate button (to get me some software engineering, testing and programming books... and 🍕)
-- [ ] add about section
+- [x] add about section

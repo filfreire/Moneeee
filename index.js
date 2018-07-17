@@ -11,7 +11,11 @@ class MainSection extends Component {
             <article>
                 <MoneeClock/>
             </article>
-            <footer><nav><ul><li><small>Made with <a href="https://yegor256.github.io/tacit/">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></li></ul></nav></footer>
+            <footer>
+                <nav><small><code>Moneeee</code> is a simple joke app to know how much money you're making during a boring meeting or "agile" ceremony.</small></nav>
+                <nav><small>It's still WIP, more features coming soon!</small></nav>
+                <nav><small>Made with <a href="https://yegor256.github.io/tacit/">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></nav>
+            </footer>
         </section>;
     }
 }
@@ -23,6 +27,7 @@ class MoneeClock extends Component {
         this.state.moneypersec = ((prompt("I make per month (20 work days, 8h a day)", 1500))/20)/8/60/60;
         this.state.time = Date.now();
         this.state.starttime = Date.now();
+        this.state.currency = "€";
     }
 
     componentDidMount() {
@@ -42,11 +47,11 @@ class MoneeClock extends Component {
             Seconds(state.starttime, state.time),
             state.moneypersec
         );
+        let currency = state.currency;
         return <div class="center">
-            <h1>💸💸💸</h1>
-            <h1>You've made: <div>{ moneee } €</div></h1>
-            <h1>💸💸💸</h1>
-        </div>;
+            <h1>You've made<br/> { moneee } {currency} <br/>in a boring meeting.</h1>
+            <h1>🎉</h1>
+            </div>;
     }
 }
 
