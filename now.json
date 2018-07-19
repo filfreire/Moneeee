@@ -1,5 +1,5 @@
 {
-  "env": {
-    "NODE_ENV": "production"
+  "static": {
+    "trailingSlash": true
   }
 }
