@@ -1,5 +1,5 @@
 {
   "env": {
-    "DATABASE_NAME": "test"
+    "NODE_ENV": "production"
   }
 }
