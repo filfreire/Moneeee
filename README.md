@@ -27,7 +27,7 @@ $ npm run start
 - [ ] Travis CI
 - [x] styling with Tacit css
 - [ ] support translations
-- [ ] support different currencies (currently €)
+- [x] support different currencies (currently €) (Thanks to [@tekknolagi](https://github.com/tekknolagi))
 - [ ] add "share how much you made in a boring meeting"
 - [ ] add donate button (to get me some software engineering, testing and programming books... and 🍕)
 - [x] add about section
