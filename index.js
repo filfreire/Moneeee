@@ -26,33 +26,63 @@ class MainSection extends Component {
 }
 
 class Currency extends Component {
-    render(props, state) {
-        let prefix = ["$", "USD"];
-
-        if (prefix.indexOf(props.unit) >= 0) {
-            return <span class="currency">{props.unit} {props.amount}</span>;
-        }
-        else {
-            return <span class="currency">{props.amount} {props.unit}</span>;
-        }
+    render({unit, amount}) {
+        return currencies[unit] === AFTER
+            ? <span class="currency">{amount} {unit}</span>
+            : <span class="currency">{unit} {amount}</span>;
     }
+}
+
+const [BEFORE, AFTER] = [0, 1];
+const currencies = {
+    '$': BEFORE,
+    '€': AFTER,
+    '¥': BEFORE,
+    '₹': BEFORE,
+    '£': BEFORE,
+}
+class Input extends Component {
+    constructor() {
+        super();
+        this.state.permonth = 1500;
+        this.state.weekduration = 40;
+        this.state.currency = "$";
+    }
+    render({start}, {permonth, weekduration, currency}) {
+        return <form>
+            <label for="salary">
+            Salary:
+            <input id="salary" value={permonth} onInput={this.updateSalary}/>
+            </label>
+            <label for="weekduration">
+            Hours per week:
+            <input id="weekduration" value={weekduration} onInput={this.updateWeekDuration}/>
+            </label>
+            { Object.keys(currencies).map((c) =>
+              <label><input type="radio" name="currency" value={c} onClick={this.updateCurrency} checked={c === currency}/>{c}</label>)
+            }
+            <button type="button" onClick={start.bind(null, permonth, weekduration, currency)}>Start</button>
+            </form>;
+   }
+   updateSalary = (e) => {
+       this.setState({permonth: Number(e.target.value)});
+   }
+   updateWeekDuration = (e) => {
+       this.setState({weekduration: Number(e.target.value)});
+   }
+   updateCurrency = (e) => {
+       this.setState({currency: e.target.value});
+   }
 }
 
 class MoneeClock extends Component {
     constructor() {
         super();
         // TODO: improve this crappy code, and crappy input
-        this.state.moneypersec = ((prompt("I make per month (20 work days, 8h a day)", 1500))/20)/8/60/60;
-        this.state.currency = prompt("In this currency", "€");
-        this.state.time = Date.now();
-        this.state.starttime = Date.now();
-    }
-
-    componentDidMount() {
-        // update time every second
-        this.timer = setInterval(() => {
-            this.setState({ time: Date.now() });
-        }, 1000);
+        this.state.moneypersec = 0;
+        this.state.currency = '';
+        this.state.time = null;
+        this.state.starttime = null;
     }
 
     componentWillUnmount() {
@@ -60,16 +90,27 @@ class MoneeClock extends Component {
         clearInterval(this.timer);
     }
 
-    render(props, state) {
-        let moneee = Moneee(
-            Seconds(state.starttime, state.time),
-            state.moneypersec
-        );
-        let currency = state.currency;
-        return <div class="center">
-            <h1>You've made<br/> <Currency unit={currency} amount={moneee} /> <br/>in a boring meeting.</h1>
-            <h1>🎉</h1>
-            </div>;
+    startTimer = (permonth, weekduration, currency) => {
+        this.timer = setInterval(() => {
+            this.setState({ time: Date.now() });
+        }, 1000);
+        this.setState({
+            moneypersec: permonth / (weekduration / 7 * 20  * 3600), // assume 20 days/month
+            currency: currency,
+            starttime: Date.now(),
+            time: Date.now()
+        });
+    }
+    render(props, {starttime, time, currency, moneypersec}) {
+        if (!starttime) {
+            return <Input start={this.startTimer}/>
+        } else {
+            const moneee = Moneee(Seconds(starttime, time), moneypersec);
+            return <div class="center">
+                    <h1>You've made<br/> <Currency unit={currency} amount={moneee} /> <br/>in a boring meeting.</h1>
+                    <h1>🎉</h1>
+                </div>;
+        }
     }
 }
 
