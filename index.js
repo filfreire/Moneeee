@@ -19,6 +19,7 @@ class MainSection extends Component {
                 <nav><small><code>Moneeee</code> is a simple joke app to know how much money you're making during a boring meeting or "agile" ceremony.</small></nav>
                 <nav><small>It's still WIP, more features coming soon!</small></nav>
                 <nav><small>Made with <a href="https://yegor256.github.io/tacit/">Tacit</a>, <a href="https://preactjs.com/">PREACT</a> and ❤️ by <a href="https://filfreire.com">Filipe Freire</a>, 2018</small></nav>
+                <nav><small>Pssst! It's open-source, you can contribute on <a href="https://github.com/filfreire/Moneeee">Github</a>!</small></nav>
             </footer>
         </section>;
     }
