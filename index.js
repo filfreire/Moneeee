@@ -74,11 +74,11 @@ class MoneeClock extends Component {
 }
 
 
-function Seconds(start,newt) {
+function Seconds(start, newt) {
     return (newt - start)/ 1000;
 }
 function Moneee(seconds, moneypersec) {
-    return Math.round(seconds * moneypersec * 100) / 100;
+    return Math.round(seconds * moneypersec);
 }
 
 export default MainSection;
