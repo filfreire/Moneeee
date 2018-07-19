@@ -24,14 +24,27 @@ class MainSection extends Component {
     }
 }
 
+class Currency extends Component {
+    render(props, state) {
+        let prefix = ["$", "USD"];
+
+        if (prefix.indexOf(props.unit) >= 0) {
+            return <span class="currency">{props.unit} {props.amount}</span>;
+        }
+        else {
+            return <span class="currency">{props.amount} {props.unit}</span>;
+        }
+    }
+}
+
 class MoneeClock extends Component {
     constructor() {
         super();
         // TODO: improve this crappy code, and crappy input
         this.state.moneypersec = ((prompt("I make per month (20 work days, 8h a day)", 1500))/20)/8/60/60;
+        this.state.currency = prompt("In this currency", "€");
         this.state.time = Date.now();
         this.state.starttime = Date.now();
-        this.state.currency = "€";
     }
 
     componentDidMount() {
@@ -53,7 +66,7 @@ class MoneeClock extends Component {
         );
         let currency = state.currency;
         return <div class="center">
-            <h1>You've made<br/> { moneee } {currency} <br/>in a boring meeting.</h1>
+            <h1>You've made<br/> <Currency unit={currency} amount={moneee} /> <br/>in a boring meeting.</h1>
             <h1>🎉</h1>
             </div>;
     }
