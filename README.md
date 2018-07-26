@@ -4,7 +4,7 @@
 
 Built with 💖, [Tacit](https://yegor256.github.io/tacit/) and [PREACT](https://preactjs.com).
 
-## How to build
+## How to build (the preact\_way/ part)
 
 Install `preact-cli`:
 ```
@@ -29,5 +29,5 @@ $ npm run start
 - [ ] support translations
 - [x] support different currencies (currently €) (Thanks to [@tekknolagi](https://github.com/tekknolagi))
 - [ ] add "share how much you made in a boring meeting"
-- [ ] add donate button (to get me some software engineering, testing and programming books... and 🍕)
+- [x] add donate button (to get me some software engineering, testing and programming books... and 🍕)
 - [x] add about section
