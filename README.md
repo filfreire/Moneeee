@@ -20,7 +20,7 @@ $ npm run start
 
 - [ ] See if something missing on how to build section
 - [x] configurable 💸money💸 value via input (defined per day, or per hour, or per second)
-- [ ] money raining animation
+- [x] money raining animation
 - [ ] static analysis/linting, code quality
 - [ ] unit tests
 - [x] domain setup, deployement to production
