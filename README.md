@@ -1,6 +1,6 @@
 # Moneeee
 
-💸 Simple app to know how much money you're making during a boring meeting or "agile" ceremony. [moneeee.tech](https://moneeee.tech/) 💸
+💸 Simple app to know how much money you're making during a boring meeting or "agile" ceremony. [filfreire.com/Moneeee/](https://filfreire.com/Moneeee/) 💸
 
 Built with 💖, [Tacit](https://yegor256.github.io/tacit/) and [PREACT](https://preactjs.com).
 
