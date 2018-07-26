@@ -42,15 +42,26 @@ input,textarea,select,button,option,html,body{font-family:"Helvetica Neue",Helve
         <h1>🎉</h1>
       </div>
       <div id="questions">
-        <div>
+        <div id="initialQuestion">
           How much do you make
         </div>
-        <button onClick="hourly()">
+        <button id="hourlyButton" onClick="hourly()">
           Hourly
         </button>
-        <button onClick="annually()">
+        <button id="annuallyButton" onClick="annually()">
           Annually
         </button>
+        <div>
+        </div>
+        <div>
+        <label id="amountLabel" for="amount"></label>
+        <input id="amountInput" type="text" name="amount" style="display: none">
+        </div>
+        <div>
+          <label id="currencyLabel" for="currency"></label>
+          <input id="currencyInput" type="text" name="currency" style="display: none">
+        </div>
+        <button id="startButton" style="display: none" onClick="start()">Start</button>
       </div>
     </article>
     <footer>
@@ -74,20 +85,31 @@ input,textarea,select,button,option,html,body{font-family:"Helvetica Neue",Helve
 
     window.hourly = function() {
      scope.type = "hourly";
-     scope.amount = parseFloat(prompt("Please input how much you make hourly", "25"));
-     console.log("Hourly Rate: ", scope.amount);
-     start();
+     amountLabel.innerText = "Please input how much you make hourly";
+     displayInputs("25");
    }
 
    window.annually = function() {
     scope.type = "annually";
-    scope.amount = parseFloat(prompt("Please input how much you make annually", "50,000").replace(/\D+/g, ""));
-    console.log("Annual Rate: ", scope.amount);
-    start();
+    amountLabel.innerText = "Please input how much you make annually";
+    displayInputs("50,000");
+  }
+
+  function displayInputs(defaultValue) {
+    initialQuestion.style.display = "none";
+    hourlyButton.style.display = "none";
+    annuallyButton.style.display = "none";
+    amountInput.style.display = "inline";
+    amountInput.value = defaultValue;
+    currencyLabel.innerText = "What currency do you use?";
+    currencyInput.style.display = "inline-block";
+    currencyInput.value = "$";
+    startButton.style.display = "inline-block";
   }
 
   function start() {
-    scope.currency = prompt("What currency do you use?", "$")
+    scope.amount = amountInput.value.replace(/\D+/g, "");
+    scope.currency = currencyInput.value;
     questions.style.display = "none";
     output.style.display = null;
 
